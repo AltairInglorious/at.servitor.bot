@@ -15,4 +15,4 @@ RUN yarn --production
 COPY --from=build /build/build ./build
 COPY prisma .
 
-CMD ["node", "server.js"]
+CMD ["node", "build/server.js"]
