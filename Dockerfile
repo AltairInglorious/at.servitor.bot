@@ -15,5 +15,6 @@ RUN yarn --production
 COPY --from=build /build/build ./build
 COPY prisma .
 RUN npx prisma generate
+RUN npx prisma migrate
 
 CMD ["node", "build/server.js"]
