@@ -1,0 +1,6 @@
+.env
+node_modules
+prisma/db.sqlite
+prisma/migrations
+build
+.idea
