@@ -12,6 +12,7 @@ ENV NODE_ENV=production
 COPY package.json yarn.lock  ./
 RUN yarn --production
 
-COPY --from=build /build/build .
+COPY --from=build /build/build ./build
+COPY prisma .
 
 CMD ["node", "server.js"]
