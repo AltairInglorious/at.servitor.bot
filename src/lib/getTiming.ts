@@ -20,12 +20,13 @@ function getDate(): Promise<ITimeObject> {
 
 
 function getArr(time: ITimeObject): IScheldureObject[] {
+    const timeOffset = (Number(process.env.TIME_OFFSET) | 0) * 3600000
     const res = []
-    res.push({name: "Fajr", time: getDiff(time.Fajr)})
-    res.push({name: "Dhuhr", time: getDiff(time.Dhuhr)})
-    res.push({name: "Asr", time: getDiff(time.Asr)})
-    res.push({name: "Maghrib", time: getDiff(time.Maghrib)})
-    res.push({name: "Isha", time: getDiff(time.Isha)})
+    res.push({name: "Fajr", time: getDiff(time.Fajr) + timeOffset})
+    res.push({name: "Dhuhr", time: getDiff(time.Dhuhr) + timeOffset})
+    res.push({name: "Asr", time: getDiff(time.Asr) + timeOffset})
+    res.push({name: "Maghrib", time: getDiff(time.Maghrib) + timeOffset})
+    res.push({name: "Isha", time: getDiff(time.Isha) + timeOffset})
     return res
 }
 
